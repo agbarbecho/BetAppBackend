@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
+@CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PATCH, RequestMethod.PUT, RequestMethod.DELETE])
 @RequestMapping("/client")
 class ClientController {
 
