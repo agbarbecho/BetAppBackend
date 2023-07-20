@@ -2,7 +2,7 @@ package com.example.veterinary.clinic.controller
 
 
 
-import com.example.veterinary.clinic.model.Detail
+
 import com.example.veterinary.clinic.model.Vet
 import com.example.veterinary.clinic.service.VetService
 import org.springframework.beans.factory.annotation.Autowired

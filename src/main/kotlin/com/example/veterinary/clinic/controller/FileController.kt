@@ -1,9 +1,8 @@
 package com.example.veterinary.clinic.controller
 
-import com.example.veterinary.clinic.model.Client
-import com.example.veterinary.clinic.model.Detail
+
 import com.example.veterinary.clinic.model.File
-import com.example.veterinary.clinic.service.DetailService
+
 import com.example.veterinary.clinic.service.FileService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
