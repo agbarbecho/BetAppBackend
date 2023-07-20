@@ -1,6 +1,7 @@
 package com.example.veterinary.clinic.controller
 
 import com.example.veterinary.clinic.model.Client
+import com.example.veterinary.clinic.model.Detail
 import com.example.veterinary.clinic.model.File
 import com.example.veterinary.clinic.service.DetailService
 import com.example.veterinary.clinic.service.FileService
@@ -25,5 +26,9 @@ class FileController {
     @PostMapping
     fun save (@RequestBody @Validated file: File): ResponseEntity<File>{
         return ResponseEntity(fileService.save(file), HttpStatus.OK)
+    }
+    @PutMapping
+    fun update (@RequestBody file: File): ResponseEntity<File> {
+        return ResponseEntity(fileService.update(file), HttpStatus.OK)
     }
 }

@@ -2,6 +2,7 @@ package com.example.veterinary.clinic.controller
 
 
 
+import com.example.veterinary.clinic.model.Detail
 import com.example.veterinary.clinic.model.Vet
 import com.example.veterinary.clinic.service.VetService
 import org.springframework.beans.factory.annotation.Autowired
@@ -25,5 +26,10 @@ class VetController {
     @PostMapping
     fun save (@RequestBody @Validated vet: Vet): ResponseEntity<Vet>{
         return ResponseEntity(vetService.save(vet), HttpStatus.OK)
+    }
+
+    @PutMapping
+    fun update (@RequestBody vet: Vet): ResponseEntity<Vet> {
+        return ResponseEntity(vetService.update(vet), HttpStatus.OK)
     }
 }

@@ -1,6 +1,7 @@
 package com.example.veterinary.clinic.controller
 
 import com.example.veterinary.clinic.model.Client
+import com.example.veterinary.clinic.model.Detail
 import com.example.veterinary.clinic.model.Pet
 import com.example.veterinary.clinic.service.MedicineService
 import com.example.veterinary.clinic.service.PetService
@@ -26,5 +27,10 @@ class PetController {
     fun save (@RequestBody @Validated pet: Pet): ResponseEntity<Pet>{
         return ResponseEntity(petService.save(pet), HttpStatus.OK)
     }
+    @PutMapping
+    fun update (@RequestBody pet: Pet): ResponseEntity<Pet> {
+        return ResponseEntity(petService.update(pet), HttpStatus.OK)
+    }
+
 }
 
