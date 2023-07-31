@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS client(
 	id SERIAL,
-	full_name VARCHAR(100) NOT NULL,
+	name VARCHAR(100) NOT NULL,
+	lastname VARCHAR(100) NOT NULL,
     address VARCHAR(50)NOT NULL,
     phone INT,
     PRIMARY KEY (id)
@@ -16,12 +17,12 @@ CREATE TABLE IF NOT EXISTS pet(
     PRIMARY KEY  (id),
     FOREIGN KEY (client_id)
     REFERENCES client (id)
-
-            );
+);
 
 CREATE TABLE IF NOT EXISTS vet(
 	id SERIAL,
 	name VARCHAR(100) NOT NULL,
+	lastname VARCHAR(100)NOT NULL,
 	PRIMARY KEY (id)
 );
 
@@ -55,8 +56,8 @@ CREATE TABLE IF NOT EXISTS medicine(
 CREATE TABLE IF NOT EXISTS detail(
 	id SERIAL,
     amount INT,
-    date_medicament DATE,
-    administration_time VARCHAR(3)NOT NULL,
+    date_medicament VARCHAR(10) NOT NULL,
+    administration_time VARCHAR(5) NOT NULL,
     is_tomorrow BOOLEAN,
     is_afternoon BOOLEAN,
     is_evening BOOLEAN,

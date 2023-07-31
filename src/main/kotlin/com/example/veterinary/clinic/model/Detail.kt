@@ -13,17 +13,17 @@ class Detail {
     var id: Long? = null
     var amount:Int? = null
     @Column(name= "date_medicament")
-    var dateMedicament: Date?= null
+    var dateMedicament: String?= null
     @Column(name= "administration_time")
-    var administrationTime: Date?= null
-    @Column(name="medicine_id")
-    var medicineId: Long? = null
-    @Column(name="file_id")
-    var fileId: Long? = null
+    var administrationTime: String?= null
     @Column(name="is_tomorrow")
     var isTomorrow: Boolean?= null
     @Column(name="is_afternoon")
     var isAfternoon: Boolean?= null
     @Column(name="is_evening")
     var isEvening: Boolean?= null
+    @Column(name="medicine_id")
+    var medicineId: Long? = null
+    @Column(name="file_id")
+    var fileId: Long? = null
 }

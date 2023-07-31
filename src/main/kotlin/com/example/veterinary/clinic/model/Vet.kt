@@ -10,4 +10,5 @@ class Vet {
     @Column(updatable = false)
     var id: Long? = null
     var name:String? = null
+    var lastname:String? = null
 }

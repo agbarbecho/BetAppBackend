@@ -11,7 +11,8 @@ class Client {
     @Column(updatable = false)
     var id: Long? = null
     @Column(name="full_name")
-    var full_name:String? = null
+    var name:String? = null
+    var lastname:String? =null
     var address:String? = null
     var phone: Int?= null
 }
