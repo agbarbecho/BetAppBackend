@@ -10,7 +10,6 @@ class Client {
     @Id
     @Column(updatable = false)
     var id: Long? = null
-    @Column(name="full_name")
     var name:String? = null
     var lastname:String? =null
     var address:String? = null
