@@ -1,9 +1,10 @@
 package com.example.veterinary.clinic.service
 
 
-import com.example.veterinary.clinic.model.File
 import com.example.veterinary.clinic.model.Pet
+import com.example.veterinary.clinic.model.PetView
 import com.example.veterinary.clinic.repository.PetRepository
+import com.example.veterinary.clinic.repository.PetViewRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
@@ -15,8 +16,15 @@ class PetService {
     @Autowired
     lateinit var petRepository: PetRepository
 
+    @Autowired
+    lateinit var petViewRepository: PetViewRepository
+
     fun list(): List<Pet>{
         return petRepository.findAll()
+    }
+
+    fun listPetClient(): List<PetView>{
+        return petViewRepository.findAll()
     }
 
     fun save(pet: Pet): Pet {

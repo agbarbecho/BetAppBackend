@@ -3,6 +3,7 @@ package com.example.veterinary.clinic.controller
 
 
 import com.example.veterinary.clinic.model.Detail
+import com.example.veterinary.clinic.model.DetailView
 import com.example.veterinary.clinic.service.DetailService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -22,6 +23,12 @@ class DetailController {
     fun list(): ResponseEntity<*> {
         return ResponseEntity(detailService.list(), HttpStatus.OK)
     }
+
+    @GetMapping("detail-medicine-file")
+    fun listDetailMedicineFile(): List<DetailView>{
+        return detailService.listDetailMedicineFile()
+    }
+
     @PostMapping
     fun save (@RequestBody @Validated detail: Detail): ResponseEntity<Detail>{
         return ResponseEntity(detailService.save(detail), HttpStatus.OK)

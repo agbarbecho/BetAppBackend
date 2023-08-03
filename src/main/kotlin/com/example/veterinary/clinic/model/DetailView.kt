@@ -21,5 +21,5 @@ class DetailView {
     var diagnostic: String? = null
     var exams: String? = null
     @Column(name= "discharge_date")
-    var dischargeDate: Date? = null
+    var dischargeDate: String? = null
 }

@@ -1,8 +1,10 @@
 package com.example.veterinary.clinic.controller
 
 
-import com.example.veterinary.clinic.model.Pet
 
+import com.example.veterinary.clinic.model.Pet
+import com.example.veterinary.clinic.model.PetView
+import com.example.veterinary.clinic.repository.PetViewRepository
 import com.example.veterinary.clinic.service.PetService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -21,6 +23,11 @@ class PetController {
     @GetMapping
     fun list(): ResponseEntity<*> {
         return ResponseEntity(petService.list(), HttpStatus.OK)
+    }
+
+    @GetMapping("pet-client")
+    fun listPetClient(): List<PetView>{
+        return petService.listPetClient()
     }
 
     @PostMapping

@@ -2,6 +2,7 @@ package com.example.veterinary.clinic.controller
 
 
 import com.example.veterinary.clinic.model.File
+import com.example.veterinary.clinic.model.FileView
 
 import com.example.veterinary.clinic.service.FileService
 import org.springframework.beans.factory.annotation.Autowired
@@ -21,6 +22,11 @@ class FileController {
     @GetMapping
     fun list(): ResponseEntity<*> {
         return ResponseEntity(fileService.list(), HttpStatus.OK)
+    }
+
+    @GetMapping("file-pet-vet")
+    fun listFilePetVet(): List<FileView>{
+        return fileService.listFileVetPet()
     }
 
     @PostMapping

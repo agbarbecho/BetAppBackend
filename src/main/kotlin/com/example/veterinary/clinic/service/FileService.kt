@@ -1,9 +1,10 @@
 package com.example.veterinary.clinic.service
 
 
-import com.example.veterinary.clinic.model.Detail
-import com.example.veterinary.clinic.model.File
+import com.example.veterinary.clinic.model.*
 import com.example.veterinary.clinic.repository.FileRepository
+import com.example.veterinary.clinic.repository.FileViewRepository
+import com.example.veterinary.clinic.repository.PetViewRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
@@ -15,8 +16,15 @@ class FileService {
     @Autowired
     lateinit var fileRepository: FileRepository
 
+    @Autowired
+    lateinit var fileViewRepository: FileViewRepository
+
     fun list(): List<File>{
         return fileRepository.findAll()
+    }
+
+    fun listFileVetPet(): List<FileView>{
+        return fileViewRepository.findAll()
     }
 
     fun save(file: File): File{
