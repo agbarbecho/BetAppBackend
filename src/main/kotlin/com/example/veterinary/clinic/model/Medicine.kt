@@ -14,7 +14,7 @@ class Medicine {
     var name: String? = null
     var description: String? = null
     @Column(name= "expiration_date")
-    var expirationDate: Date? = null
+    var expirationDate: String? = null
 
 
 }

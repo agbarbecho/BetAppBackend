@@ -12,16 +12,13 @@ class File {
     var id: Long? = null
 
     @Column(name = "admission_date")
-    var admissionDate: Date? = null
+    var admissionDate: String? = null
     var diagnostic: String? = null
     var exams: String? = null
-
     @Column(name = "discharge_date")
-    var dischargeDate: Date? = null
-
+    var dischargeDate: String? = null
     @Column(name = "vet_id")
     var vetId: Long? = null
-
     @Column(name = "pet_id")
     var petId: Long? = null
 }

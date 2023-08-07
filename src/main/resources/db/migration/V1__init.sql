@@ -27,11 +27,11 @@
 
     CREATE TABLE IF NOT EXISTS file(
         id SERIAL,
-        admission_date DATE,
+        admission_date VARCHAR(15) NOT NULL,
         weight DECIMAL,
         diagnostic VARCHAR(50) NOT NULL,
         exams VARCHAR (100) NOT NULL,
-        discharge_date DATE,
+        discharge_date VARCHAR(15) NOT NULL,
         pet_id INT,
         vet_id INT,
         PRIMARY KEY (id),
@@ -44,7 +44,7 @@
         id SERIAL,
         name VARCHAR(100) NOT NULL,
         description VARCHAR(100) NOT NULL,
-        expiration_date DATE,
+        expiration_date VARCHAR(15) NOT NULL,
         PRIMARY KEY (id)
 
     );
@@ -53,11 +53,11 @@
     CREATE TABLE IF NOT EXISTS detail(
         id SERIAL,
         amount INT,
-        date_medicament VARCHAR(10) NOT NULL,
-        administration_time VARCHAR(5) NOT NULL,
-        is_tomorrow BOOLEAN,
-        is_afternoon BOOLEAN,
-        is_evening BOOLEAN,
+        date_medicament VARCHAR(15) NOT NULL,
+        administration_time VARCHAR(15) NOT NULL,
+        tomorrow VARCHAR(10),
+        afternoon VARCHAR(10),
+        evening VARCHAR(10),
         medicine_id INT,
         file_id INT,
         PRIMARY KEY (id),

@@ -1,7 +1,6 @@
 package com.example.veterinary.clinic.model
 
 import jakarta.persistence.*
-import java.util.Date
 
 
 @Entity
@@ -16,12 +15,9 @@ class Detail {
     var dateMedicament: String?= null
     @Column(name= "administration_time")
     var administrationTime: String?= null
-    @Column(name="is_tomorrow")
-    var isTomorrow: Boolean?= null
-    @Column(name="is_afternoon")
-    var isAfternoon: Boolean?= null
-    @Column(name="is_evening")
-    var isEvening: Boolean?= null
+    var tomorrow: String?= null
+    var afternoon: String?= null
+    var evening: String?= null
     @Column(name="medicine_id")
     var medicineId: Long? = null
     @Column(name="file_id")
